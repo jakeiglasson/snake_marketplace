@@ -1,0 +1,26 @@
+<h1>Legless Pets</h1>
+
+<div class="hero"></div>
+
+<p>
+  Find your dream snake
+</p>
+
+<h3><%= link_to "new listing", new_listing_path %></h3>
+
+<% @listings.each do |i|%>
+
+  <h3><%= i.title %>: <%= link_to "edit", edit_listing_path(i.id)  %></h3>
+  <ul style=""> 
+    <li><%= image_tag i.picture if i.picture.attached? %></li>
+    <li><%= i.description %></li>
+    <li><%= i.breed.name%></li>
+    <li><%= i.sex %></li>
+    <li><%= i.price %></li>
+    <li><%= i.city %></li>
+    <li><%= i.state %></li>
+    <li><%= i.date_of_birth %></li>
+    <li><%= i.diet %></li>
+  </ul>
+
+<% end %>

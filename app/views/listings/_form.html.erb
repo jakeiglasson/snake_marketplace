@@ -1,0 +1,68 @@
+<%= form_with model:@listing, local: true do |form| %>
+  <ul>
+  
+    <li>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </li>
+
+    <li>
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </li>
+
+    <li>
+      <%= form.label :breeds %>
+      <%= form.collection_select(:breed_id, Breed.all, :id, :name) %>
+    </li>
+
+    <li>
+      <%= form.label :sex %>
+      <%= form.select(:sex, [['female', 'female'], ['male', 'male']]) %>
+      <%=  %>
+    </li>
+
+    <li>
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </li>
+
+    <li>
+      <%= form.label :deposit %>
+      <%= form.text_field :deposit %>
+    </li>
+
+    <li>
+      <%= form.label :city %>
+      <%= form.text_field :city %>
+    </li>
+
+    <li>
+      <%= form.label :state %>
+      <%= form.text_field :state %>
+    </li>
+
+    <li>
+      <%= form.label :date_of_birth %>
+      <%= form.date_select :date_of_birth %>
+    </li>
+
+    <li>
+      <%= form.label :diet %>
+      <%= form.text_field :diet %>
+    </li>
+
+    <li>
+      <div>
+        <%= form.label :picture %> 
+        <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+      </div>
+    </li>
+
+    <li>
+      <%= form.submit %>
+    </li>
+
+  </ul>
+
+<% end %>
